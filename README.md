@@ -40,31 +40,45 @@ It integrates with the **Fake Store API** for fetching products and supports a p
 ## ⚡️ Environment Setup
 
 ### 1️⃣ Backend (`/backend`)
+
 Install dependencies:
 
 npm install express mongoose dotenv cors axios
+
 npm install --save-dev nodemon
+
 Create .env file:
 
 PORT=5000
+
 MONGO_URI=mongodb://127.0.0.1:27017/vibecommerce
+
 Run server:
 
 npm run dev
-2️⃣ Frontend (/frontend)
+
+## 2️⃣ Frontend (/frontend)
+
 Install dependencies:
 
 npm install react-router-dom axios react-icons react-toastify
-npm install -D tailwindcss postcss autoprefixer
-npx tailwindcss init -p
-Run frontend:
 
-npm run dev
-🧩 API Endpoints
-Method	Endpoint	Description
+npm install -D tailwindcss postcss autoprefixer
+
+npx tailwindcss init -p
+
+Run frontend: npm run dev
+
+## 🧩 API Endpoints
+
 GET	/api/products	Fetch all products (from Fake Store API)
+
 GET	/api/cart	Retrieve cart items
+
 POST	/api/cart	Add an item to cart
+
 PATCH	/api/cart/:id	Update cart quantity
+
 DELETE	/api/cart/:id	Remove an item from cart
+
 POST	/api/checkout	Place order and generate receipt
