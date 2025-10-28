@@ -8,14 +8,14 @@ export default function Products() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/products")
+      .get("https://vibecommerce.onrender.com/api/products")
       .then((res) => setProducts(res.data))
       .catch((err) => toast.error("Error fetching products"));
   }, []);
 
   const addToCart = async (product) => {
     try {
-      await axios.post("http://localhost:5000/api/cart", {
+      await axios.post("https://vibecommerce.onrender.com/api/cart", {
         productId: product._id,
         qty: 1,
       });

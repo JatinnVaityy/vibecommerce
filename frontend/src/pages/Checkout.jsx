@@ -9,10 +9,10 @@ function CheckoutPage() {
 
   const handleCheckout = async () => {
     try {
-      const { data } = await axios.get("http://localhost:5000/api/cart");
+      const { data } = await axios.get("https://vibecommerce.onrender.com/api/cart");
       const cartItems = data.cart;
 
-      const res = await axios.post("http://localhost:5000/api/checkout", {
+      const res = await axios.post("https://vibecommerce.onrender.com/api/checkout", {
         name,
         email,
         cartItems,
@@ -54,7 +54,7 @@ function CheckoutPage() {
       {receipt && (
         <div className="mt-6 bg-green-100 border border-green-300 rounded p-4 w-full max-w-md">
           <h3 className="text-lg font-bold mb-2 text-green-700">
-            ✅ Order Successful
+            Order Successful
           </h3>
           <p><strong>Name:</strong> {receipt.name}</p>
           <p><strong>Email:</strong> {receipt.email}</p>

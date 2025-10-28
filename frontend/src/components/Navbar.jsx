@@ -10,7 +10,7 @@ export default function Navbar() {
 
   return (
     <nav className="bg-white shadow-md p-4 flex justify-between items-center sticky top-0 z-50">
-      {/* Logo */}
+     
       <Link
         to="/"
         onClick={closeMenu}
@@ -20,7 +20,6 @@ export default function Navbar() {
         VibeCommerce
       </Link>
 
-      {/* Desktop Menu */}
       <div className="hidden md:flex gap-6 text-gray-700 font-medium">
         <Link to="/" className="hover:text-blue-600 transition">
           Products
@@ -36,7 +35,6 @@ export default function Navbar() {
         </Link>
       </div>
 
-      {/* Mobile Hamburger Icon */}
       <button
         onClick={toggleMenu}
         className="text-gray-700 text-2xl md:hidden focus:outline-none"
@@ -44,7 +42,6 @@ export default function Navbar() {
         {menuOpen ? <FaTimes /> : <FaBars />}
       </button>
 
-      {/* Mobile Menu */}
       {menuOpen && (
         <div className="absolute top-16 left-0 w-full bg-white shadow-md flex flex-col items-center gap-4 py-4 text-gray-700 font-medium md:hidden animate-slideDown">
           <Link to="/" onClick={closeMenu} className="hover:text-blue-600 transition">

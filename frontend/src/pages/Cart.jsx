@@ -16,7 +16,7 @@ function CartPage() {
 
   const fetchCart = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/cart");
+      const res = await axios.get("https://vibecommerce.onrender.com/api/cart");
       setCart(res.data.cart || []);
       setTotal(res.data.total || 0);
     } catch {
@@ -27,7 +27,7 @@ function CartPage() {
   // Remove item
   const removeFromCart = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/cart/${id}`);
+      await axios.delete(`https://vibecommerce.onrender.com/api/cart/${id}`);
       setCart((prev) => prev.filter((item) => item._id !== id));
       toast.info("Item removed from cart");
     } catch {
@@ -43,7 +43,7 @@ function CartPage() {
     }
 
     try {
-      const res = await axios.put(`http://localhost:5000/api/cart/${id}`, {
+      const res = await axios.put(`https://vibecommerce.onrender.com/api/cart/${id}`, {
         qty,
       });
       setCart((prev) =>
